@@ -1,0 +1,18 @@
+[project]
+name = "realworld-backend"
+version = "0.1.0"
+description = "Django app"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["django>=5.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# ★ 追加：src 配置を明示
+[tool.hatch.build.targets.wheel]
+packages = ["src/config"]
+
+[tool.uv]
+dev-dependencies = ["ruff>=0.6.2"]

@@ -1,0 +1,15 @@
+services:
+  web:
+    # Build the image from the Dockerfile in the current directory
+    build: .
+
+    # Host the FastAPI application on port 8000
+    ports:
+      - "8000:8000"
+    working_dir: /app/src
+    volumes:
+      - .:/app
+      - venv:/app/.venv
+
+volumes:
+  venv:
